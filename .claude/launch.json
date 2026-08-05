@@ -1,0 +1,21 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mr-president-client",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "client",
+      "port": 5173,
+      "autoPort": false
+    },
+    {
+      "name": "debate-ch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "-p", "3100"],
+      "cwd": "debate-ch",
+      "port": 3100,
+      "autoPort": false
+    }
+  ]
+}
