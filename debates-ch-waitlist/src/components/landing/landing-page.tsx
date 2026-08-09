@@ -9,7 +9,8 @@ import WatchLiveMock from "@/components/landing/watch-live-mock";
 import { Mascot } from "@/components/landing/mascot";
 import { Badge } from "@/components/ui";
 import { ChallengeBotsButton, WaitlistButton } from "@/components/waitlist";
-import PuzzlePreview from "@/components/landing/puzzle-preview";
+import PuzzleIllustration from "@/components/landing/puzzle-illustration";
+import DebateReviewMock from "@/components/landing/debate-review-mock";
 
 /** Public landing page — original composition covering the eight source sections. */
 
@@ -44,7 +45,9 @@ function Section({
           </h2>
           <p className="mt-3 max-w-lg text-fg-muted">{sub}</p>
           <div className="mt-6">
-            <WaitlistButton size="lg">{cta}</WaitlistButton>
+            <WaitlistButton size="lg">
+                {cta}
+            </WaitlistButton>
           </div>
         </div>
         <div className="min-w-0">{children}</div>
@@ -69,7 +72,7 @@ export default function LandingPage({ showcase }: { showcase: BotCardData[] }) {
               <span className="text-brand">Improve every round.</span>
             </h1>
             <p className="mt-4 max-w-lg text-base text-fg-muted sm:mt-5 sm:text-lg">
-              Debate people or distinctive AI opponents, receive clear analysis
+              Debate people or distinctive debate bots, receive clear analysis
               and sharpen the skills that make arguments matter.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
@@ -132,7 +135,7 @@ export default function LandingPage({ showcase }: { showcase: BotCardData[] }) {
           <div className="mx-auto max-w-2xl text-center">
             <Badge tone="brand">Practise anytime</Badge>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Debate distinctive AI opponents
+              Debate distinctive bots
             </h2>
             <p className="mt-3 text-fg-muted">
               Choose from beginner to master, each with different strengths,
@@ -153,15 +156,26 @@ export default function LandingPage({ showcase }: { showcase: BotCardData[] }) {
         </div>
       </section>
 
+      {/* Analyse your debates */}
+      <Section
+        id="analyse"
+        eyebrow="Your own rounds"
+        title="Analyse your debates"
+        sub="Receive instant Debate Reviews to improve your communication skills — every line graded, an evaluation bar that moves with the round, and a coach who walks you through exactly where it turned."
+        cta="Join Waitlist"
+      >
+        <DebateReviewMock />
+      </Section>
+
       {/* Puzzles */}
       <Section
         id="puzzles"
         eyebrow="Daily training"
         title="Level up with debate puzzles"
-        sub="Train rebuttal, framing, evidence and strategic judgement through short daily challenges. Try today's:"
+        sub="Short spoken challenges that train rebuttal, framing, evidence and strategic judgement — three a day, and a streak worth keeping."
         cta="Join Waitlist"
       >
-        <PuzzlePreview />
+        <PuzzleIllustration />
       </Section>
 
       {/* Watch */}
@@ -174,39 +188,6 @@ export default function LandingPage({ showcase }: { showcase: BotCardData[] }) {
         flip
       >
         <WatchLiveMock />
-      </Section>
-
-      {/* Upload & analyse */}
-      <Section
-        id="analyse"
-        eyebrow="Your own rounds"
-        title="Upload and analyse any debate"
-        sub="Receive timestamped feedback, score breakdowns, missed rebuttals and a clear judgement for debates you've already had — audio or video."
-        cta="Join Waitlist"
-      >
-        <div className="rounded-3xl bg-board p-5 text-ink shadow-2xl ring-1 ring-black/10" aria-hidden>
-          <div className="rounded-2xl border-2 border-dashed border-[#c9c7bd] bg-white/60 p-6 text-center text-sm font-bold text-ink-muted">
-            Drop MP4, MOV, WebM, MP3, WAV or M4A
-          </div>
-          <div className="mt-3 space-y-2">
-            {[
-              "Speaker-labelled transcript",
-              "Six-skill scorecard per speaker",
-              "Missed rebuttals with timestamps",
-              "A clear, explained judgement",
-            ].map((line) => (
-              <p
-                key={line}
-                className="flex items-center gap-2 rounded-xl bg-white px-3 py-2 text-xs font-semibold shadow-sm"
-              >
-                <span className="grid h-4 w-4 place-items-center rounded-full bg-[#81b64c] text-[9px] text-white">
-                  ✓
-                </span>
-                {line}
-              </p>
-            ))}
-          </div>
-        </div>
       </Section>
 
       {/* Mobile app */}
