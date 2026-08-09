@@ -16,6 +16,14 @@
       "cwd": "debate-ch",
       "port": 3100,
       "autoPort": false
+    },
+    {
+      "name": "debates-ch-waitlist",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "-p", "3200"],
+      "cwd": "debates-ch-waitlist",
+      "port": 3200,
+      "autoPort": false
     }
   ]
 }
