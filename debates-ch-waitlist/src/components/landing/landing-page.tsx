@@ -76,8 +76,7 @@ export default function LandingPage({ showcase }: { showcase: BotCardData[] }) {
               <ChallengeBotsButton className="w-full sm:w-auto" />
             </div>
             <p className="mt-4 text-sm text-fg-faint">
-              Free to join. No credit card. 45 opponents already waiting for
-              you.
+              Free to join. No credit card.
             </p>
           </div>
           <div className="min-w-0">
