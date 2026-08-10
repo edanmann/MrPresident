@@ -89,6 +89,44 @@ export default function LandingPage({ showcase }: { showcase: BotCardData[] }) {
         </div>
       </section>
 
+      {/* Analyse your debates */}
+      <Section
+        id="analyse"
+        eyebrow="Your own rounds"
+        title="Analyse your debates"
+        sub="Receive instant Debate Reviews to improve your communication skills — every line graded, an evaluation bar that moves with the round, and a coach who walks you through exactly where it turned."
+        cta="Join Waitlist"
+      >
+        <DebateReviewMock />
+      </Section>
+
+      {/* Bots */}
+      <section id="bots" className="border-y border-border-subtle bg-surface-1/40">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+          <div className="mx-auto max-w-2xl text-center">
+            <Badge tone="brand">Practise anytime</Badge>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Debate distinctive bots
+            </h2>
+            <p className="mt-3 text-fg-muted">
+              Choose from beginner to master, each with different strengths,
+              weaknesses and debate behaviour.
+            </p>
+          </div>
+          <div className="mt-10 rounded-3xl bg-board p-4 shadow-2xl ring-1 ring-black/10 sm:p-5">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {showcase.map((bot) => (
+                <BotCard key={bot.slug} bot={bot} />
+              ))}
+            </div>
+          </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <WaitlistButton size="lg">Join Waitlist</WaitlistButton>
+            <ChallengeBotsButton size="lg" />
+          </div>
+        </div>
+      </section>
+
       {/* Lessons */}
       <Section
         id="lessons"
@@ -127,44 +165,6 @@ export default function LandingPage({ showcase }: { showcase: BotCardData[] }) {
             ))}
           </div>
         </div>
-      </Section>
-
-      {/* Bots */}
-      <section id="bots" className="border-y border-border-subtle bg-surface-1/40">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <Badge tone="brand">Practise anytime</Badge>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Debate distinctive bots
-            </h2>
-            <p className="mt-3 text-fg-muted">
-              Choose from beginner to master, each with different strengths,
-              weaknesses and debate behaviour.
-            </p>
-          </div>
-          <div className="mt-10 rounded-3xl bg-board p-4 shadow-2xl ring-1 ring-black/10 sm:p-5">
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {showcase.map((bot) => (
-                <BotCard key={bot.slug} bot={bot} />
-              ))}
-            </div>
-          </div>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <WaitlistButton size="lg">Join Waitlist</WaitlistButton>
-            <ChallengeBotsButton size="lg" />
-          </div>
-        </div>
-      </section>
-
-      {/* Analyse your debates */}
-      <Section
-        id="analyse"
-        eyebrow="Your own rounds"
-        title="Analyse your debates"
-        sub="Receive instant Debate Reviews to improve your communication skills — every line graded, an evaluation bar that moves with the round, and a coach who walks you through exactly where it turned."
-        cta="Join Waitlist"
-      >
-        <DebateReviewMock />
       </Section>
 
       {/* Puzzles */}
